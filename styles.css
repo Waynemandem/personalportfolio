@@ -359,7 +359,7 @@ button:focus-visible,
     font-weight: var(--font-weight-semibold);
     line-height: 1.3;
     color: var(--color-text);
-    max-width: 640px;
+    text-align: center;
 }
 
 /* Thinking content */
