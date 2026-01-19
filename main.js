@@ -71,18 +71,6 @@ function initSmoothScroll() {
    3. PERFORMANCE & ACCESSIBILITY
    ============================================================================ */
 
-// Preload images for better performance
-window.addEventListener('load', () => {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        // Native lazy loading is handled by browser
-        // This is just for logging
-        img.addEventListener('load', () => {
-            // Image loaded successfully
-        });
-    });
-});
-
 // Keyboard navigation support
 document.addEventListener('keydown', (e) => {
     // ESC key could close any modals in future

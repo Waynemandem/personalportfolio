@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#0f0f0f">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="...">
     <meta property="og:title" content="Okoemu Joseph - Frontend Developer">
     <meta property="og:description" content="Frontend Developer | Building modern, accessible, and performant web experiences">
     
@@ -16,7 +17,7 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    
+    <link rel="canonical" href="https://yourdomain.com">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text x='50%' y='50%' font-size='24' font-weight='bold' text-anchor='middle' dy='.3em' fill='%23FBBF24'>J</text></svg>">
 </head>
@@ -39,11 +40,36 @@
                 </div>
                 
                 <div class="hero-image">
-                    <img src="assets/photo_2025-12-20_15-45-31.jpg" alt="Okoemu Joseph" loading="lazy">
+                  <img 
+                     src="assets/photo_2025-12-20_15-45-31.jpg" 
+                     alt="Okoemu Joseph" 
+                     loading="lazy"
+                     width="400"
+                     height="500"
+                     >
                 </div>
             </div>
         </div>
     </section>
+
+      <!-- ============================================
+        HOW I THINK SECTION
+        ============================================ -->
+        <section class="how-i-think">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">How I Think</span>
+                    <h1>My Approach to Development</h1>
+                </div>
+
+                <div class="thinking-process">
+                    <div class="thinking-step">
+                        <h3>Problem Analysis</h3>
+                        <p>I break down complex problems into manageable components, ensuring a clear understanding of requirements and constraints.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- ============================================
         PROJECTS SECTION
@@ -52,7 +78,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Featured Work</span>
-                <h2>Recent Projects</h2>
+                <h1>Recent Projects</h1>
                 <p>A selection of projects showcasing my expertise in modern frontend development</p>
             </div>
             
@@ -63,8 +89,12 @@
                         <img src="" alt="Project title" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Strategic Campaign</h3>
-                        <p class="project-description">Digital marketing platform with real-time analytics and engagement tracking</p>
+                        <h3>Team Collaboration</h3>
+                        <p>
+                           Built a real-time campaign dashboard using React, TypeScript, and WebSockets.
+                           Reduced data latency from 5s to 500ms. Improved UI performance by 40%.
+                           <br><small>GitHub: @username/project-name</small>
+</p>
                         <div class="tech-stack">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">TypeScript</span>
@@ -77,7 +107,7 @@
                 <!-- Project 2 -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="" alt="Project title" class="project-image" loading="lazy">
+                        <img src="assets/photo_2025-12-31_03-07-31.jpg" alt="Project title" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Brand Identity</h3>
@@ -87,22 +117,22 @@
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <a href="dulai.netlify.app" class="project-link">View Project →</a>
                     </div>
                 </article>
 
                 <!-- Project 3 -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="" alt="Project title" class="project-image" loading="lazy">
+                        <img src="assets/Screenshot 2026-01-18 115744.png" alt="Project title" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Web Development</h3>
-                        <p class="project-description">High-performance web application with optimized performance and accessibility</p>
+                        <h3>Open-Source Web platform</h3>
+                        <p class="project-description">A community-driven open-source web application focused on performance, accessibility and maintainable architecture. Built with scalable components, clear documentation and conttribution-friendly workflows to support real-world collaboration.</p>
                         <div class="tech-stack">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                         <a href="#" class="project-link">View Project →</a>
                     </div>
@@ -118,7 +148,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Expertise</span>
-                <h2>Technical Skills</h2>
+                <h1>Technical Skills</h1>
                 <p>Technologies and tools I work with regularly</p>
             </div>
 
@@ -130,8 +160,6 @@
                         <li>HTML5 & Semantic Markup</li>
                         <li>CSS3 & Modern Layouts</li>
                         <li>JavaScript (ES6+)</li>
-                        <li>React & Next.js</li>
-                        <li>TypeScript</li>
                         <li>Responsive Design</li>
                     </ul>
                 </div>
@@ -170,10 +198,19 @@
         ============================================ -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">About Me</span>
-                <h2>Who I Am</h2>
+        <div class="section-header">
+            <div class="avatar-line">
+                <span class="line"></span>
+                <img src="assets/photo_2025-12-21_07-22-21.jpg" alt="Profile" class="avatar">
             </div>
+
+            <p class="name">Joseph</p>
+            <h1>Let's work together!</h1>
+
+            <p class="status">
+                <span class="dot"></span>Available for new Projects
+            </p>
+        </div>    
 
             <div class="about-content">
                 <p>I'm a frontend developer with 1+ year of experience building clean, modern web experiences. I'm passionate about turning complex designs into smooth, accessible user interfaces that feel great to use.</p>
@@ -191,10 +228,10 @@
                         <div class="stat-number">4+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
+                  <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Open-source Contributions</div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -219,7 +256,7 @@
                     </div>
                     <div class="contact-item">
                         <h3>Phone</h3>
-                        <p><a href="tel:+2349078740445">+234 907 874 0445</a></p>
+                        <p><a href="tel:+2349078740445" class="btn btn-secondary">Give me a Call</a></p>
                     </div>
                     <div class="contact-item">
                         <h3>Location</h3>
@@ -230,29 +267,21 @@
                 <div class="social-links">
                     <p class="social-heading">Connect with me</p>
                     <div class="social-icons">
-                        <a href="https://twitter.com" aria-label="Twitter" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"/>
-                            </svg>
+                        <a href="https://x.com/Joseph_mandem" aria-label="Twitter" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <svg    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>   
                         </a>
-                        <a href="https://linkedin.com" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-                                <circle cx="4" cy="4" r="2"/>
-                            </svg>
+                        <a href="https://www.linkedin.com/in/joseph-okoemu-544919374" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
                         <a href="https://github.com/Waynemandem" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/vg">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         </a>
                         <a href="https://instagram.com" aria-label="Instagram" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37"/>
-                                <circle cx="17.5" cy="6.5" r="1.5"/>
-                            </svg>
-                        </a>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> 
+                        </a>    
+                        <a href="https://wa.me/2349078740445" aria-label="Whatsapp" class="social-icon" target="_blank" rel="noopener noreferrer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp"><path d="M16.75 7.5c-.25-1.5-1.5-2.75-3-3s-3.25.25-4.5 1c-1.25.75-2 1.75-2.25 3-.25 1.25-.25 2.5.25 3.75L7 15l-1.5 4.5 4.5-1.5h.25c1.25.5 2.5.5 3.75.25s2.25-1 3-2.25c.75-1.25 1-2.75 1-4.5s-.75-3-2-4z"></path></svg> 
+                        </a>            
                     </div>
                 </div>
             </div>
@@ -264,12 +293,23 @@
         ============================================ -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Okoemu Joseph. All rights reserved.</p>
-            <p>Designed & built with attention to detail.</p>
+            <p>&copy; 2026 Okoemu Joseph</p>
+            <p> All rights reserved.</p>
+            
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="main.js"></script>
+    <!-- No structured data (JSON-LD) for better search results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Okoemu Joseph",
+  "jobTitle": "Frontend Developer",
+  ...
+}
+</script>
 </body>
 </html>
