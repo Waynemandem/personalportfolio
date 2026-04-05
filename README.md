@@ -10,7 +10,7 @@ Your portfolio has been completely redesigned with a **modern, professional aest
 
 1. **Update your information:**
    - Edit the contact section in `index.html`
-   - Add your email, phone, social links
+   - Add your email, phone, social links and other details
 
 2. **Add your photo:**
    - Place your image in the `assets/` folder
