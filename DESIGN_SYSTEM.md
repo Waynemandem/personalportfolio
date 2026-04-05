@@ -90,7 +90,7 @@ Hover: Darker yellow + lift effect + enhanced shadow
 
 Secondary Button (Outline):
 ┌─────────────────────┐
-│   Get In Touch      │  ← Yellow border, transparent
+│   Get In Touch      │  ← Yellow border and transparent
 └─────────────────────┘
 Hover: Yellow background + lift effect
 ```
