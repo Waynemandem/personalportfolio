@@ -20,6 +20,251 @@
     <link rel="canonical" href="https://yourdomain.com">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text x='50%' y='50%' font-size='24' font-weight='bold' text-anchor='middle' dy='.3em' fill='%23FBBF24'>J</text></svg>">
+
+    <style>
+      /* ============================================
+         MODERNIZED SKILLS SECTION STYLES
+         ============================================ */
+      .skills {
+        padding: 6rem 0;
+      }
+
+      .skills-new-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .skill-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(251, 191, 36, 0.12);
+        border-radius: 16px;
+        padding: 1.75rem;
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .skill-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #FBBF24, transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .skill-card:hover {
+        border-color: rgba(251, 191, 36, 0.35);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(251, 191, 36, 0.06);
+      }
+
+      .skill-card:hover::before {
+        opacity: 1;
+      }
+
+      .skill-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .skill-card-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(251, 191, 36, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      .skill-card h3 {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #FBBF24;
+        margin: 0;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        transition: all 0.2s ease;
+        cursor: default;
+      }
+
+      .skill-pill.primary {
+        background: rgba(251, 191, 36, 0.12);
+        color: #FBBF24;
+        border: 1px solid rgba(251, 191, 36, 0.25);
+      }
+
+      .skill-pill.primary:hover {
+        background: rgba(251, 191, 36, 0.22);
+        border-color: rgba(251, 191, 36, 0.5);
+      }
+
+      .skill-pill.secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .skill-pill.secondary:hover {
+        background: rgba(255, 255, 255, 0.09);
+        color: rgba(255, 255, 255, 0.95);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .skill-pill.accent {
+        background: rgba(99, 211, 189, 0.1);
+        color: #63d3bd;
+        border: 1px solid rgba(99, 211, 189, 0.25);
+      }
+
+      .skill-pill.accent:hover {
+        background: rgba(99, 211, 189, 0.18);
+        border-color: rgba(99, 211, 189, 0.45);
+      }
+
+      /* Gumroad store banner */
+      .store-banner {
+        margin: 2.5rem 0 0;
+        padding: 1.5rem 2rem;
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, rgba(251, 191, 36, 0.03) 100%);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .store-banner-text h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        margin: 0 0 0.25rem;
+      }
+
+      .store-banner-text p {
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.55);
+        margin: 0;
+      }
+
+      .btn-gumroad {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.65rem 1.4rem;
+        background: #FBBF24;
+        color: #0f0f0f;
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.2s ease, transform 0.2s ease;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .btn-gumroad:hover {
+        background: #f8c94b;
+        transform: translateY(-1px);
+      }
+
+      .btn-gumroad svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Gumroad link in contact section */
+      .contact-item.store-link a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: #FBBF24;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+      .contact-item.store-link a:hover {
+        opacity: 0.75;
+        text-decoration: underline;
+      }
+
+      /* Contributions section polish */
+      #contributions {
+        padding: 4rem 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      #contributions h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .contribution-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(251, 191, 36, 0.12);
+        border-radius: 16px;
+        padding: 1.75rem;
+      }
+
+      .contribution-card h3 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .contribution-card .date {
+        font-size: 0.8rem;
+        color: #FBBF24;
+        margin-bottom: 0.75rem;
+      }
+
+      .contribution-card ul {
+        margin: 0.75rem 0 1rem 1.25rem;
+      }
+
+      .contribution-card a {
+        color: #FBBF24;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contribution-card a:hover {
+        text-decoration: underline;
+      }
+    </style>
 </head>
 <body>
     <!-- ============================================
@@ -36,6 +281,10 @@
                     <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary">See My Work</a>
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="https://okoemu.gumroad.com/l/zfiaos" target="_blank" rel="noopener noreferrer" class="btn-gumroad" style="border-radius:8px;">
+                          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2v-5.5l-1.5 1.5-1.5-1.5V16H8v-8h2l2 2.5 2-2.5h2v8z"/></svg>
+                          My Store
+                        </a>
                     </div>
                 </div>
                 
@@ -52,24 +301,24 @@
         </div>
     </section>
 
-      <!-- ============================================
+    <!-- ============================================
         HOW I THINK SECTION
         ============================================ -->
-        <section class="how-i-think">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-label">How I Think</span>
-                    <h1>My Approach to Development</h1>
-                </div>
+    <section class="how-i-think">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How I Think</span>
+                <h1>My Approach to Development</h1>
+            </div>
 
-                <div class="thinking-process">
-                    <div class="thinking-step">
-                        <h3>Problem Analysis</h3>
-                        <p>I break down complex problems into manageable components, ensuring a clear understanding of requirements and constraints.</p>
-                    </div>
+            <div class="thinking-process">
+                <div class="thinking-step">
+                    <h3>Problem Analysis</h3>
+                    <p>I break down complex problems into manageable components, ensuring a clear understanding of requirements and constraints.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- ============================================
         PROJECTS SECTION
@@ -86,15 +335,11 @@
                 <!-- Project 1 -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/Screenshot 2026-01-19 123054.png" alt="Project title" class="project-image" loading="lazy">
+                        <img src="assets/Screenshot 2026-01-19 123054.png" alt="Team Collaboration Dashboard" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Team Collaboration</h3>
-                        <p>
-                           Built a real-time campaign dashboard using React, TypeScript, and WebSockets.
-                           Reduced data latency from 5s to 500ms. Improved UI performance by 40%.
-                           </p>
-</p>
+                        <p>Built a real-time campaign dashboard using React, TypeScript, and WebSockets. Reduced data latency from 5s to 500ms. Improved UI performance by 40%.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">JavaScript</span>
@@ -104,17 +349,14 @@
                     </div>
                 </article>
 
-
-
                 <!-- Project 2 -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/photo_2025-12-31_03-07-31.jpg" alt="Project title" class="project-image" loading="lazy">
+                        <img src="assets/photo_2025-12-31_03-07-31.jpg" alt="Brand Identity" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Brand Identity</h3>
-                        <p class="project-description">Designed and implemented a complete brand identity system with a modern, interactive UI. Translated Figma designs into clean, responsive components with consistent typography, spacing, and motion. Emphasis on visual clarity, scalability, and maintainable CSS.
-Deliverable: Reusable UI patterns and documented style guide.</p>
+                        <p class="project-description">Designed and implemented a complete brand identity system with a modern, interactive UI. Translated Figma designs into clean, responsive components with consistent typography, spacing, and motion.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">CSS</span>
@@ -127,18 +369,11 @@ Deliverable: Reusable UI patterns and documented style guide.</p>
                 <!-- Project 3 -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/Screenshot 2026-01-18 115744.png" alt="Project title" class="project-image" loading="lazy">
+                        <img src="assets/Screenshot 2026-01-18 115744.png" alt="Open-Source Web Platform" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Open-Source Web platform</h3>
-                        <p class="project-description">Open-Source Contribution: Good First Issue Finder
-
-                              Enhanced SEO and social media metadata for this community-driven web platform.  
-                              Implemented Open Graph tags, Twitter Cards, and performance optimizations through 
-                              DNS preconnect. My first merged contribution to open source!
-
-                             ✨ Contribution: Improved discoverability and social sharing capabilities
-                              📈 Impact: Better SEO rankings and enhanced user experience</p>
+                        <h3>Open-Source Web Platform</h3>
+                        <p class="project-description">Enhanced SEO and social media metadata for this community-driven web platform. Implemented Open Graph tags, Twitter Cards, and performance optimizations through DNS preconnect. First merged open-source contribution.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">HTML/CSS</span>
                             <span class="tech-tag">React</span>
@@ -148,90 +383,148 @@ Deliverable: Reusable UI patterns and documented style guide.</p>
                     </div>
                 </article>
 
-                <!-- project 4 -->
-                 <article class="project-card">
+                <!-- Project 4 -->
+                <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/logo.jpg.jpg" alt="Project title" class="project-image" loading="lazy">
+                        <img src="assets/logo.jpg.jpg" alt="Masterpiece Shawarma" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Masterpiece Shawarma</h3>
-                        <p class="project-description">Designed and developed a responsive website for Masterpiece Shawarma, a local restaurant. The site features an interactive menu, online ordering system and integrated Google Maps for location. Emphasis on user-friendly navigation and mobile-first design to enhance customer engagement.</p>
-                         <div class="tech-stack">
+                        <p class="project-description">Designed and developed a responsive website for a local restaurant featuring an interactive menu, online ordering system, and Paystack payment integration. Mobile-first design to enhance customer engagement.</p>
+                        <div class="tech-stack">
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Firebase</span>
-                         </div>
-                       <a href="https://masterpiece-eta.vercel.app/" class="project-link">View Project →</a>  
-                 </article>
+                        </div>
+                        <a href="https://masterpiece-eta.vercel.app/" class="project-link">View Project →</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-        SKILLS SECTION
+        SKILLS SECTION — MODERNIZED
         ============================================ -->
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Expertise</span>
                 <h1>Technical Skills</h1>
-                <p>Technologies and tools I work with regularly</p>
+                <p>Technologies and tools I work with to ship great products</p>
             </div>
 
-            <div class="skills-grid">
-                <!-- Frontend -->
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul class="skill-list">
-                        <li>HTML5 & Semantic Markup</li>
-                        <li>CSS3 & Modern Layouts</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>Responsive Design</li>
-                        <li>React</li>
-                    </ul>
+            <div class="skills-new-grid">
+
+                <!-- Card 1: Core Languages -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon">🧱</div>
+                        <h3>Core Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-pill primary">HTML5</span>
+                        <span class="skill-pill primary">CSS3</span>
+                        <span class="skill-pill primary">JavaScript (ES6+)</span>
+                        <span class="skill-pill primary">TypeScript</span>
+                    </div>
                 </div>
 
-                <!-- Backend -->
-                 <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul class="skill-list">
-                        <li>Firebase</li>
-                        <li>Authentication</li>
-                        <li>Real Database Structure</li>
-                        <li>State Management</li>
-                        <li>Payment Integration</li>
-                    </ul>
+                <!-- Card 2: Frameworks & Libraries -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon">⚛️</div>
+                        <h3>Frameworks & Libraries</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-pill primary">React</span>
+                        <span class="skill-pill primary">Vite</span>
+                        <span class="skill-pill secondary">Tailwind CSS</span>
+                        <span class="skill-pill secondary">Responsive Design</span>
+                        <span class="skill-pill secondary">Semantic Markup</span>
+                    </div>
                 </div>
 
-                <!-- Tools & Design -->
-                <div class="skill-category">
-                    <h3>Design & Tools</h3>
-                    <ul class="skill-list">
-                        <li>Web Accessibility (WCAG)</li>
-                        <li>Git & Version Control</li>
-                        <li>RESTful APIs</li>
-                        <li>Performance Optimization</li>
-                        <li>Testing (Jest, RTL)</li>
-                        <li>UI/UX Principles</li>
-                        <li>Web Standards</li>
-                    </ul>
+                <!-- Card 3: Backend & Data -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon">🔧</div>
+                        <h3>Backend & Data</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-pill accent">Firebase</span>
+                        <span class="skill-pill accent">Supabase</span>
+                        <span class="skill-pill accent">RESTful APIs</span>
+                        <span class="skill-pill accent">Authentication</span>
+                        <span class="skill-pill accent">Paystack</span>
+                        <span class="skill-pill secondary">State Management</span>
+                    </div>
                 </div>
 
-                <!-- Other Skills -->
-                <div class="skill-category">
-                    <h3>Additional</h3>
-                    <ul class="skill-list">
-                        <li>Cross-browser Testing</li>
-                        <li>Problem Solving</li>
-                        <li>Attention to Detail</li>
-                        <li>Communication</li>
-                        <li>Open Source Contribution</li>
-                        <li>Git Workflow (Branch, PR, Merge)</li>
-                        <li>SEO Optimization</li>
-                        <li>Social Media Metadata (OG, Twitter Cards)</li>
-                    </ul>
+                <!-- Card 4: Tooling & Workflow -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon">🛠️</div>
+                        <h3>Tooling & Workflow</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-pill secondary">Git & GitHub</span>
+                        <span class="skill-pill secondary">Branch / PR / Merge</span>
+                        <span class="skill-pill secondary">VS Code</span>
+                        <span class="skill-pill secondary">Testing (Jest, RTL)</span>
+                        <span class="skill-pill secondary">Cross-browser Testing</span>
+                        <span class="skill-pill secondary">Performance Optimization</span>
+                    </div>
                 </div>
+
+                <!-- Card 5: Design & UX -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon">🎨</div>
+                        <h3>Design & UX</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-pill secondary">Figma</span>
+                        <span class="skill-pill secondary">UI/UX Principles</span>
+                        <span class="skill-pill secondary">Web Accessibility (WCAG)</span>
+                        <span class="skill-pill secondary">Web Standards</span>
+                        <span class="skill-pill secondary">Mobile-first Design</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: SEO & Growth -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon">📈</div>
+                        <h3>SEO & Discoverability</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-pill secondary">SEO Optimization</span>
+                        <span class="skill-pill secondary">Open Graph Tags</span>
+                        <span class="skill-pill secondary">Twitter Cards</span>
+                        <span class="skill-pill secondary">DNS Preconnect</span>
+                        <span class="skill-pill secondary">Structured Data (JSON-LD)</span>
+                        <span class="skill-pill secondary">Open Source Contributions</span>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Gumroad Store Banner -->
+            <div class="store-banner">
+                <div class="store-banner-text">
+                    <h3>🛒 My Digital Store</h3>
+                    <p>Templates, UI kits, and frontend resources — built by me, for developers like you.</p>
+                </div>
+                <a href="https://okoemu.gumroad.com/l/zfiaos" target="_blank" rel="noopener noreferrer" class="btn-gumroad">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                        <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                    Visit Store
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -240,19 +533,19 @@ Deliverable: Reusable UI patterns and documented style guide.</p>
         ============================================ -->
     <section class="about" id="about">
         <div class="container">
-        <div class="section-header">
-            <div class="avatar-line">
-                <span class="line"></span>
-                <img src="assets/profilepic.jpg" alt="Profile" class="avatar">
-            </div>
+            <div class="section-header">
+                <div class="avatar-line">
+                    <span class="line"></span>
+                    <img src="assets/profilepic.jpg" alt="Profile" class="avatar">
+                </div>
 
-            <p class="name">Joseph</p>
-            <h1>Let's work together!</h1>
+                <p class="name">Joseph</p>
+                <h1>Let's work together!</h1>
 
-            <p class="status">
-                <span class="dot"></span>Available for new Projects
-            </p>
-        </div>    
+                <p class="status">
+                    <span class="dot"></span>Available for new Projects
+                </p>
+            </div>    
 
             <div class="about-content">
                 <p>I'm a frontend developer with 1+ year of experience building clean, modern web experiences. I'm passionate about turning complex designs into smooth, accessible user interfaces that feel great to use.</p>
@@ -270,34 +563,34 @@ Deliverable: Reusable UI patterns and documented style guide.</p>
                         <div class="stat-number">4+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
-                  <div class="stat-item">
+                    <div class="stat-item">
                         <div class="stat-number">1</div>
                         <div class="stat-label">Open-source Contributions</div>
-                  </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- NEW SECTION -->
-<section id="contributions">
-  <h2>Open Source Contributions</h2>
-  
-  <div class="contribution-card">
-    <h3>Good First Issue Web App - Club Gamma</h3>
-    <p class="date">January 2026</p>
-    <p>Open-Source Contribution: Good First Issue Finder</p>
-    <p>Enhanced SEO and social media metadata</p>
-    <ul>
-      <li>Implemented Open Graph and Twitter Card tags</li>
-      <li>Optimized meta descriptions for search engines</li>
-      <li>Added DNS preconnect for performance improvement</li>
-      <li>Improved accessibility with color-scheme support</li>
-    </ul>
-    <a href="https://github.com/Waynemandem/Good_First_Issue_Web_App/tree/improve-seo-metadata" target="_blank">View Pull Request →</a>
-  </div>
-</section>
+    <!-- ============================================
+        OPEN SOURCE CONTRIBUTIONS SECTION
+        ============================================ -->
+    <section id="contributions">
+        <h2>Open Source Contributions</h2>
+        
+        <div class="contribution-card">
+            <h3>Good First Issue Web App — Club Gamma</h3>
+            <p class="date">January 2026</p>
+            <p>Enhanced SEO and social media metadata for a community-driven open-source platform.</p>
+            <ul>
+                <li>Implemented Open Graph and Twitter Card tags</li>
+                <li>Optimized meta descriptions for search engines</li>
+                <li>Added DNS preconnect for performance improvement</li>
+                <li>Improved accessibility with color-scheme support</li>
+            </ul>
+            <a href="https://github.com/Waynemandem/Good_First_Issue_Web_App/tree/improve-seo-metadata" target="_blank">View Pull Request →</a>
+        </div>
+    </section>
 
     <!-- ============================================
         CONTACT SECTION
@@ -324,26 +617,40 @@ Deliverable: Reusable UI patterns and documented style guide.</p>
                         <h3>Location</h3>
                         <p>Remote, Open to Opportunities</p>
                     </div>
+                    <!-- Gumroad Store Link -->
+                    <div class="contact-item store-link">
+                        <h3>Digital Store</h3>
+                        <p>
+                            <a href="https://okoemu.gumroad.com/l/zfiaos" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                                okoemu.gumroad.com
+                            </a>
+                        </p>
+                    </div>
                 </div>
 
                 <div class="social-links">
                     <p class="social-heading">Connect with me</p>
                     <div class="social-icons">
-                        <a href="https://x.com/Joseph_mandem" aria-label="Twitter" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>   
+                        <a href="https://x.com/Joseph_mandem" aria-label="Twitter / X" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>   
                         </a>
                         <a href="https://www.linkedin.com/in/joseph-okoemu-544919374" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
                         <a href="https://github.com/Waynemandem" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         </a>
                         <a href="https://www.instagram.com/dat_frontend_guy/" aria-label="Instagram" class="social-icon" target="_blank" rel="noopener noreferrer">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> 
                         </a>    
-                        <a href="https://wa.me/2349078740445" aria-label="Whatsapp" class="social-icon" target="_blank" rel="noopener noreferrer">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp"><path d="M16.75 7.5c-.25-1.5-1.5-2.75-3-3s-3.25.25-4.5 1c-1.25.75-2 1.75-2.25 3-.25 1.25-.25 2.5.25 3.75L7 15l-1.5 4.5 4.5-1.5h.25c1.25.5 2.5.5 3.75.25s2.25-1 3-2.25c.75-1.25 1-2.75 1-4.5s-.75-3-2-4z"></path></svg> 
-                        </a>            
+                        <a href="https://wa.me/2349078740445" aria-label="WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.75 7.5c-.25-1.5-1.5-2.75-3-3s-3.25.25-4.5 1c-1.25.75-2 1.75-2.25 3-.25 1.25-.25 2.5.25 3.75L7 15l-1.5 4.5 4.5-1.5h.25c1.25.5 2.5.5 3.75.25s2.25-1 3-2.25c.75-1.25 1-2.75 1-4.5s-.75-3-2-4z"></path></svg> 
+                        </a>
+                        <!-- Gumroad social icon -->
+                        <a href="https://okoemu.gumroad.com/l/zfiaos" aria-label="Gumroad Store" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -355,23 +662,29 @@ Deliverable: Reusable UI patterns and documented style guide.</p>
         ============================================ -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Okoemu Joseph</p>
-            <p> All rights reserved.</p>
-            
+            <p>&copy; 2026 Okoemu Joseph. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="main.js"></script>
-    <!-- No structured data (JSON-LD) for better search results -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Okoemu Joseph",
-  "jobTitle": "Frontend Developer",
-  ...
-}
-</script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Okoemu Joseph",
+      "jobTitle": "Frontend Developer",
+      "email": "okoemu4@gmail.com",
+      "url": "https://yourdomain.com",
+      "sameAs": [
+        "https://github.com/Waynemandem",
+        "https://www.linkedin.com/in/joseph-okoemu-544919374",
+        "https://x.com/Joseph_mandem",
+        "https://okoemu.gumroad.com/l/zfiaos"
+      ]
+    }
+    </script>
 </body>
 </html>
