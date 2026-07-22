@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Frontend Developer | Building modern, accessible, and performant web experiences">
+    <meta name="description" content="Joseph Okoemu — Frontend & Full-Stack Developer building production web products with React, Supabase, and AI integrations. Open to junior frontend/full-stack roles.">
     <meta name="theme-color" content="#0f0f0f">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
     <meta property="og:image" content="...">
-    <meta property="og:title" content="Okoemu Joseph - Frontend Developer">
-    <meta property="og:description" content="Frontend Developer | Building modern, accessible, and performant web experiences">
-    
-    <title>Okoemu Joseph - Frontend Developer</title>
-    
+    <meta property="og:title" content="Joseph Okoemu - Frontend & Full-Stack Developer">
+    <meta property="og:description" content="Building production web products with React, Supabase, and AI integrations. Open to junior frontend/full-stack roles.">
+
+    <title>Joseph Okoemu - Frontend & Full-Stack Developer</title>
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://yourdomain.com">
@@ -23,7 +23,7 @@
 
     <style>
       /* ============================================
-         MODERNIZED SKILLS SECTION STYLES
+         SKILLS SECTION STYLES
          ============================================ */
       .skills {
         padding: 6rem 0;
@@ -264,6 +264,13 @@
       .contribution-card a:hover {
         text-decoration: underline;
       }
+
+      /* Location tag under status */
+      .location-tag {
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.5);
+        margin-top: 0.25rem;
+      }
     </style>
 </head>
 <body>
@@ -274,10 +281,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Okoemu Joseph</h1>
-                    <p class="subtitle">Frontend Developer</p>
-                    <p class="tagline">I build modern, accessible systems that users love. Focused on clean code, performance, and scalable design.</p>
-                    
+                    <h1>Joseph Okoemu</h1>
+                    <p class="subtitle">Frontend & Full-Stack Developer</p>
+                    <p class="tagline">I build and ship production web products end-to-end — React frontends, Supabase/Firebase backends, payments, and AI features. Based in Nigeria, building for African users and beyond.</p>
+
                     <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary">See My Work</a>
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -287,11 +294,11 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="hero-image">
-                  <img 
-                     src="assets/photo_2025-12-20_15-45-31.jpg" 
-                     alt="Okoemu Joseph" 
+                  <img
+                     src="assets/photo_2025-12-20_15-45-31.jpg"
+                     alt="Joseph Okoemu"
                      loading="lazy"
                      width="400"
                      height="500"
@@ -307,14 +314,22 @@
     <section class="how-i-think">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">How I Think</span>
+                <span class="section-label">How I Work</span>
                 <h1>My Approach to Development</h1>
             </div>
 
             <div class="thinking-process">
                 <div class="thinking-step">
-                    <h3>Problem Analysis</h3>
-                    <p>I break down complex problems into manageable components, ensuring a clear understanding of requirements and constraints.</p>
+                    <h3>Understand the Problem</h3>
+                    <p>I start by breaking requirements down into what actually matters — the user's flow, the edge cases, and what "done" looks like — before writing a line of code.</p>
+                </div>
+                <div class="thinking-step">
+                    <h3>Build & Ship</h3>
+                    <p>I work in small, testable pieces and get things live early. Every project I list here is a real, deployed product — not a tutorial clone.</p>
+                </div>
+                <div class="thinking-step">
+                    <h3>Debug Like It's Production</h3>
+                    <p>I've fixed real bugs under real constraints — auth race conditions, RLS data leaks, stale cache states — because that's what shipped software demands.</p>
                 </div>
             </div>
         </div>
@@ -328,92 +343,77 @@
             <div class="section-header">
                 <span class="section-label">Featured Work</span>
                 <h1>Recent Projects</h1>
-                <p>A selection of projects showcasing my expertise in modern frontend development</p>
+                <p>Production products I've designed, built, and shipped — not tutorials</p>
             </div>
-            
+
             <div class="projects-grid">
-                <!-- Project 1 -->
+                <!-- Project 1 — OrbitCV -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/Screenshot 2026-01-19 123054.png" alt="Team Collaboration Dashboard" class="project-image" loading="lazy">
+                        <img src="assets/orbitcv-screenshot.png" alt="OrbitCV — AI Resume Builder SaaS" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Team Collaboration</h3>
-                        <p>Built a real-time campaign dashboard using React, TypeScript, and WebSockets. Reduced data latency from 5s to 500ms. Improved UI performance by 40%.</p>
+                        <h3>OrbitCV</h3>
+                        <p class="project-description">AI-powered resume builder SaaS. Built the full product: Supabase auth and database with row-level security, Paystack subscriptions (monthly Pro plan + single-resume unlock), and AI-driven resume scoring. Fixed real production issues including a stale cache bug, an RLS data leak, and an auth race condition.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">React</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Paystack</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">TanStack Query</span>
                         </div>
-                        <a href="https://github.com/Waynemandem/Expense-tracker.git" class="project-link">View Project →</a>
+                        <a href="https://orbitcv.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
                     </div>
                 </article>
 
-                <!-- Project 2 -->
+                <!-- Project 2 — Resume Score API -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/photo_2025-12-31_03-07-31.jpg" alt="Brand Identity" class="project-image" loading="lazy">
+                        <img src="assets/resume-score-api.png" alt="Resume Score API" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Brand Identity</h3>
-                        <p class="project-description">Designed and implemented a complete brand identity system with a modern, interactive UI. Translated Figma designs into clean, responsive components with consistent typography, spacing, and motion.</p>
+                        <h3>Resume Score API</h3>
+                        <p class="project-description">A standalone public API I built to properly learn API design fundamentals: request validation, structured JSON responses, and OpenAI integration for scoring resume content against a job description.</p>
                         <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">OpenAI API</span>
                         </div>
-                        <a href="https://dulai.netlify.app" class="project-link">View Project →</a>
+                        <a href="https://github.com/Waynemandem" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
                     </div>
                 </article>
 
-                <!-- Project 3 -->
+                <!-- Project 3 — Youth For Christ Verse App -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/Screenshot 2026-01-18 115744.png" alt="Open-Source Web Platform" class="project-image" loading="lazy">
+                        <img src="assets/yfc-verse-app.png" alt="Youth For Christ Verse App" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Open-Source Web Platform</h3>
-                        <p class="project-description">Enhanced SEO and social media metadata for this community-driven web platform. Implemented Open Graph tags, Twitter Cards, and performance optimizations through DNS preconnect. First merged open-source contribution.</p>
+                        <h3>Youth For Christ Verse App</h3>
+                        <p class="project-description">A daily-verse web app built for my church's youth ministry. Handles user auth and data through Supabase, with transactional email delivery via Resend, deployed on Vercel.</p>
                         <div class="tech-stack">
-                            <span class="tech-tag">HTML/CSS</span>
                             <span class="tech-tag">React</span>
-                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Resend</span>
                         </div>
-                        <a href="https://github.com/Waynemandem/Good_First_Issue_Web_App.git" class="project-link">View Project →</a>
+                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </article>
 
-                <!-- Project 4 -->
+                <!-- Project 4 — TrendIT Systems -->
                 <article class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="assets/logo.jpg.jpg" alt="Masterpiece Shawarma" class="project-image" loading="lazy">
+                        <img src="assets/trendit-systems.png" alt="TrendIT Systems — Solar & IT Support" class="project-image" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Masterpiece Shawarma</h3>
-                        <p class="project-description">Designed and developed a responsive website for a local restaurant featuring an interactive menu, online ordering system, and Paystack payment integration. Mobile-first design to enhance customer engagement.</p>
+                        <h3>TrendIT Systems</h3>
+                        <p class="project-description">Business website and lead-generation setup for a solar, IPTV, and IT-support company based in Abuja, Nigeria — built and maintained as an ongoing client project through my agency, Axion Digital.</p>
                         <div class="tech-stack">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">HTML/CSS/JS</span>
+                            <span class="tech-tag">SEO</span>
+                            <span class="tech-tag">Automation</span>
                         </div>
-                        <a href="https://masterpiece-eta.vercel.app/" class="project-link">View Project →</a>
-                    </div>
-                </article>
-
-                <!-- Project 5 — SLUT Clothing -->
-                <article class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="assets/slut-clothing.jpeg" alt="SLUT Clothing — Full-stack e-commerce streetwear brand" class="project-image" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>SLUT Clothing</h3>
-                        <p class="project-description">Built a full-stack e-commerce platform for a streetwear brand. Features product listings, cart management, and a seamless checkout experience. Focused on bold UI aesthetics that match the brand's identity and a smooth, mobile-first shopping flow.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Tailwind</span>
-                        </div>
-                        <a href="https://slut-clothing.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
+                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </article>
             </div>
@@ -421,14 +421,14 @@
     </section>
 
     <!-- ============================================
-        SKILLS SECTION — MODERNIZED
+        SKILLS SECTION
         ============================================ -->
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Expertise</span>
                 <h1>Technical Skills</h1>
-                <p>Technologies and tools I work with to ship great products</p>
+                <p>Technologies and tools I work with to ship real products</p>
             </div>
 
             <div class="skills-new-grid">
@@ -456,9 +456,9 @@
                     <div class="skill-tags">
                         <span class="skill-pill primary">React</span>
                         <span class="skill-pill primary">Vite</span>
+                        <span class="skill-pill primary">TanStack Query</span>
                         <span class="skill-pill secondary">Tailwind CSS</span>
-                        <span class="skill-pill secondary">Responsive Design</span>
-                        <span class="skill-pill secondary">Semantic Markup</span>
+                        <span class="skill-pill secondary">React Router</span>
                     </div>
                 </div>
 
@@ -469,16 +469,31 @@
                         <h3>Backend & Data</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-pill accent">Firebase</span>
                         <span class="skill-pill accent">Supabase</span>
-                        <span class="skill-pill accent">RESTful APIs</span>
-                        <span class="skill-pill accent">Authentication</span>
+                        <span class="skill-pill accent">Firebase</span>
+                        <span class="skill-pill accent">Node.js</span>
+                        <span class="skill-pill accent">REST APIs</span>
                         <span class="skill-pill accent">Paystack</span>
-                        <span class="skill-pill secondary">State Management</span>
+                        <span class="skill-pill secondary">Row-Level Security</span>
                     </div>
                 </div>
 
-                <!-- Card 4: Tooling & Workflow -->
+                <!-- Card 4: AI-Assisted Development -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon">🤖</div>
+                        <h3>AI-Assisted Development</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-pill accent">OpenAI API</span>
+                        <span class="skill-pill accent">Claude</span>
+                        <span class="skill-pill secondary">Prompt Engineering</span>
+                        <span class="skill-pill secondary">AI-Powered Features</span>
+                        <span class="skill-pill secondary">AI-Assisted Debugging</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Tooling & Workflow -->
                 <div class="skill-card">
                     <div class="skill-card-header">
                         <div class="skill-card-icon">🛠️</div>
@@ -488,40 +503,22 @@
                         <span class="skill-pill secondary">Git & GitHub</span>
                         <span class="skill-pill secondary">Branch / PR / Merge</span>
                         <span class="skill-pill secondary">VS Code</span>
-                        <span class="skill-pill secondary">Testing (Jest, RTL)</span>
-                        <span class="skill-pill secondary">Cross-browser Testing</span>
-                        <span class="skill-pill secondary">Performance Optimization</span>
+                        <span class="skill-pill secondary">Vercel</span>
+                        <span class="skill-pill secondary">Postman</span>
                     </div>
                 </div>
 
-                <!-- Card 5: Design & UX -->
+                <!-- Card 6: Design & Product -->
                 <div class="skill-card">
                     <div class="skill-card-header">
                         <div class="skill-card-icon">🎨</div>
-                        <h3>Design & UX</h3>
+                        <h3>Design & Product</h3>
                     </div>
                     <div class="skill-tags">
                         <span class="skill-pill secondary">Figma</span>
                         <span class="skill-pill secondary">UI/UX Principles</span>
-                        <span class="skill-pill secondary">Web Accessibility (WCAG)</span>
-                        <span class="skill-pill secondary">Web Standards</span>
                         <span class="skill-pill secondary">Mobile-first Design</span>
-                    </div>
-                </div>
-
-                <!-- Card 6: SEO & Growth -->
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <div class="skill-card-icon">📈</div>
-                        <h3>SEO & Discoverability</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-pill secondary">SEO Optimization</span>
-                        <span class="skill-pill secondary">Open Graph Tags</span>
-                        <span class="skill-pill secondary">Twitter Cards</span>
-                        <span class="skill-pill secondary">DNS Preconnect</span>
-                        <span class="skill-pill secondary">Structured Data (JSON-LD)</span>
-                        <span class="skill-pill secondary">Open Source Contributions</span>
+                        <span class="skill-pill secondary">Web Accessibility</span>
                     </div>
                 </div>
 
@@ -560,29 +557,30 @@
                 <h1>Let's work together!</h1>
 
                 <p class="status">
-                    <span class="dot"></span>Available for new Projects
+                    <span class="dot"></span>Open to Junior Frontend & Full-Stack Roles
                 </p>
-            </div>    
+                <p class="location-tag">Based in Nigeria · Open to Remote</p>
+            </div>
 
             <div class="about-content">
-                <p>I'm a frontend developer with 1+ year of experience building clean, modern web experiences. I'm passionate about turning complex designs into smooth, accessible user interfaces that feel great to use.</p>
-                
-                <p>My approach combines technical excellence with a user-centered mindset. I care deeply about performance, accessibility, and code quality—because great UI is both how it looks and how it feels.</p>
+                <p>I'm a self-taught frontend and full-stack developer who ships real products, not just portfolio pieces. I build across the stack — React on the frontend, Supabase/Firebase on the backend, Paystack for payments, and OpenAI for AI-powered features — and I run a small dev agency, Axion Digital, alongside my own projects.</p>
 
-                <p>When I'm not coding, you'll find me learning new technologies, exploring design patterns, or contributing to open-source projects. I'm always excited about the next challenge.</p>
+                <p>My approach combines technical care with a bias toward shipping. I care about clean code and good UX, but I care more about whether the thing actually works for real users — because every product listed here is live, not a demo.</p>
+
+                <p>I'm currently sharpening TanStack Query and interview-readiness as I prepare for a junior frontend or full-stack role. When I'm not coding, I'm documenting the journey for other self-taught developers.</p>
 
                 <div class="stats">
                     <div class="stat-item">
                         <div class="stat-number">1+</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-label">Years Building in Production</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Shipped Projects</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">1</div>
-                        <div class="stat-label">Open-source Contributions</div>
+                        <div class="stat-label">Open-source Contribution</div>
                     </div>
                 </div>
             </div>
@@ -594,7 +592,7 @@
         ============================================ -->
     <section id="contributions">
         <h2>Open Source Contributions</h2>
-        
+
         <div class="contribution-card">
             <h3>Good First Issue Web App — Club Gamma</h3>
             <p class="date">January 2026</p>
@@ -617,7 +615,7 @@
             <div class="section-header">
                 <span class="section-label">Get In Touch</span>
                 <h2>Let's Work Together</h2>
-                <p>Have a project in mind? I'd love to hear from you.</p>
+                <p>Hiring, or have a project in mind? I'd love to hear from you.</p>
             </div>
 
             <div class="contact-content">
@@ -632,7 +630,7 @@
                     </div>
                     <div class="contact-item">
                         <h3>Location</h3>
-                        <p>Remote, Open to Opportunities</p>
+                        <p>Nigeria — Remote, Open to Opportunities</p>
                     </div>
                     <!-- Gumroad Store Link -->
                     <div class="contact-item store-link">
@@ -650,7 +648,7 @@
                     <p class="social-heading">Connect with me</p>
                     <div class="social-icons">
                         <a href="https://x.com/Joseph_mandem" aria-label="Twitter / X" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>   
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                         </a>
                         <a href="https://www.linkedin.com/in/joseph-okoemu-544919374" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -659,10 +657,10 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         </a>
                         <a href="https://www.instagram.com/dat_frontend_guy/" aria-label="Instagram" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> 
-                        </a>    
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
                         <a href="https://wa.me/2349078740445" aria-label="WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.75 7.5c-.25-1.5-1.5-2.75-3-3s-3.25.25-4.5 1c-1.25.75-2 1.75-2.25 3-.25 1.25-.25 2.5.25 3.75L7 15l-1.5 4.5 4.5-1.5h.25c1.25.5 2.5.5 3.75.25s2.25-1 3-2.25c.75-1.25 1-2.75 1-4.5s-.75-3-2-4z"></path></svg> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.75 7.5c-.25-1.5-1.5-2.75-3-3s-3.25.25-4.5 1c-1.25.75-2 1.75-2.25 3-.25 1.25-.25 2.5.25 3.75L7 15l-1.5 4.5 4.5-1.5h.25c1.25.5 2.5.5 3.75.25s2.25-1 3-2.25c.75-1.25 1-2.75 1-4.5s-.75-3-2-4z"></path></svg>
                         </a>
                         <!-- Gumroad social icon -->
                         <a href="https://okoemu.gumroad.com/l/zfiaos" aria-label="Gumroad Store" class="social-icon" target="_blank" rel="noopener noreferrer">
@@ -679,7 +677,7 @@
         ============================================ -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Okoemu Joseph. All rights reserved.</p>
+            <p>&copy; 2026 Joseph Okoemu. All rights reserved.</p>
         </div>
     </footer>
 
@@ -691,10 +689,11 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Okoemu Joseph",
-      "jobTitle": "Frontend Developer",
+      "name": "Joseph Okoemu",
+      "jobTitle": "Frontend & Full-Stack Developer",
       "email": "okoemu4@gmail.com",
       "url": "https://yourdomain.com",
+      "knowsAbout": ["React", "TypeScript", "Supabase", "Firebase", "Paystack", "OpenAI API", "TanStack Query"],
       "sameAs": [
         "https://github.com/Waynemandem",
         "https://www.linkedin.com/in/joseph-okoemu-544919374",
