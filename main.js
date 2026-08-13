@@ -1,91 +1,56 @@
-/* ============================================================================
-   MODERN PORTFOLIO - MINIMAL JAVASCRIPT
-   
-   Purpose:
-   - Smooth navigation interactions
-   - Scroll-based animations for elements
-   - No external dependencies, vanilla JavaScript only
-   
-   ============================================================================ */
+(() => {
+  // Current year in footer
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all functionality
-    initScrollAnimations();
-    initSmoothScroll();
-});
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.getElementById('site-navigation');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = siteNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    siteNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
-/* ============================================================================
-   1. SCROLL-BASED ANIMATIONS - Reveal elements as they enter viewport
-   ============================================================================ */
+  // Case study dialogs
+  document.querySelectorAll('[data-dialog-target]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const dialog = document.getElementById(trigger.dataset.dialogTarget);
+      if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+    });
+  });
+  document.querySelectorAll('[data-close-dialog]').forEach((btn) => {
+    btn.addEventListener('click', () => btn.closest('dialog')?.close());
+  });
+  document.querySelectorAll('dialog.case-study').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
 
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add fade-in animation when element enters viewport
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
+  // Reveal-on-scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
         });
-    }, observerOptions);
-
-    // Observe all elements with animation potential
-    const animatedElements = document.querySelectorAll(
-        '.project-card, .skill-category, .stat-item, .contact-item'
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
     );
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
-    });
-}
-
-/* ============================================================================
-   2. SMOOTH SCROLL - Enhance anchor link navigation
-   ============================================================================ */
-
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Only handle valid section links
-            if (href !== '#' && document.querySelector(href)) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-}
-
-/* ============================================================================
-   3. PERFORMANCE & ACCESSIBILITY
-   ============================================================================ */
-
-// Keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    // ESC key could close any modals in future
-    if (e.key === 'Escape') {
-        // Handle escape key if needed
-    }
-});
-
-/* ============================================================================
-   PRODUCTION NOTES
-   
-   - This portfolio uses minimal JavaScript for maximum performance
-   - CSS handles all animations and transitions
-   - JavaScript only enhances user experience with smooth scrolling
-   - No tracking or analytics code included (add based on requirements)
-   - Accessibility features work without JavaScript
-   
-   ============================================================================ */
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+  }
+})();
