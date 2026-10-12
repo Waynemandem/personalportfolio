@@ -322,6 +322,59 @@ a:focus-visible, button:focus-visible{
 .project-card__stats span::before{ content:"→ "; color: var(--accent); }
 .project-card__actions{ display:flex; flex-wrap:wrap; gap:.65rem; }
 
+
+/* ---------- Growth / Meta Ads ---------- */
+.funnel {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    counter-reset: step;
+}
+.funnel li {
+    position: relative;
+    padding: 24px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 182, 43, 0.06), rgba(255, 255, 255, 0.015));
+    transition: transform .25s ease, border-color .25s ease;
+}
+.funnel li:hover { transform: translateY(-4px); border-color: #ffb62b; }
+.funnel li:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffb62b;
+    font-size: 1.1rem;
+    z-index: 1;
+}
+.funnel strong { display: block; margin-bottom: 8px; color: #ffb62b; font-size: .95rem; }
+.funnel span { color: rgba(255, 255, 255, 0.72); font-size: .9rem; line-height: 1.55; }
+
+.growth-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.growth-card {
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+}
+.growth-card h3 { margin: 0 0 10px; font-size: 1.05rem; }
+.growth-card p { margin: 0; color: rgba(255, 255, 255, 0.72); line-height: 1.6; }
+
+@media (max-width: 900px) {
+    .funnel, .growth-grid { grid-template-columns: 1fr; }
+    .funnel li:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -16px; transform: translateX(-50%); }
+}
+
+
 /* ---------------------------------------------------------------------- *
  * Experience — timeline list
  * ---------------------------------------------------------------------- */
